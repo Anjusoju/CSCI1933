@@ -1,0 +1,26 @@
+turnq070
+method,                              ArrayList Runtime,   LinkedList Runtime,  Explanation
+
+boolean add(T element); O(n), O(n), each implementation runs through the length of the list once. Resizing the array does not change big O.
+
+boolean add(int index, T element); O(n), O(n), each implementation runs through the length of the list once in the worst case. Resizing the array does not change big O.
+
+void clear(); O(1), O(1), the size of list does not affect either implementation, since a new empty underlying structure is created or the dummy node is just set to null.
+
+T get(int index); O(1), O(n), honestly I'm not sure how Java accesses indices so I'm not sure whether Java loops through the array. The linked list runs through once in the worst case.
+
+int indexOf(T element); O(n), O(n), each implementation runs through the length of the list once in worst case.
+
+boolean isEmpty(); O(1), O(1), the size of the list doesn't affect the runtime, since this method only needs to check for a single element.
+
+int size(); O(n), O(n), the size of the list is, predictably, the determining factor is this functions runtime.
+
+void sort(); O(n2), O(n2), the worst case uses a nested loop structure in both implementations.
+
+T remove(int index); O(n), O(n), the list is looped through in the worst case of tryting to remove the last element.
+
+void greaterThan(T element); O(n), O(n), this one is hard because while remove() is called, in the worst case for greaterThan() (all are <= element), remove is removing the first element, so it really just loops through once.
+
+void lessThan(T element); O(n), O(n), same as above.
+
+void equalTo(T element); O(n), O(n), same as above.
